@@ -19,8 +19,6 @@ COPY files /
 COPY --from=configurability_php /go/src/github.com/1and1internet/configurability/bin/plugins/php.so /opt/configurability/goplugins
 RUN \
     apt-get update && \
-    apt-get install -y software-properties-common && \
-    apt-get update && \
     apt-get install -y imagemagick graphicsmagick curl && \
     apt-get install -y php${PHPVER}-bcmath php${PHPVER}-bz2 php${PHPVER}-cli php${PHPVER}-common php${PHPVER}-curl php${PHPVER}-dba php${PHPVER}-fpm php${PHPVER}-gd php${PHPVER}-gmp php${PHPVER}-imap php${PHPVER}-intl php${PHPVER}-ldap php${PHPVER}-mbstring php${PHPVER}-mysql php${PHPVER}-odbc php${PHPVER}-pgsql php${PHPVER}-recode php${PHPVER}-snmp php${PHPVER}-soap php${PHPVER}-sqlite php${PHPVER}-tidy php${PHPVER}-xml php${PHPVER}-xmlrpc php${PHPVER}-xsl php${PHPVER}-zip && \
     apt-get install -y php-gnupg php-imagick php-mongodb php-fxsl && \
